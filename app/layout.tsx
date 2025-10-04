@@ -6,6 +6,7 @@ import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import { CopyProtection } from "@/components/copy-protection"
 import { ScrollHover } from "@/components/scroll-hover"
+import { DynamicFavicon } from "@/components/dynamic-favicon"
 import "./globals.css"
 
 const inter = Inter({
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <CopyProtection />
         <ScrollHover />
+        <DynamicFavicon />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           <Suspense fallback={null}>
             {children}
