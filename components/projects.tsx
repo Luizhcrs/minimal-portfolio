@@ -14,7 +14,7 @@ const projects = [
       "Bot inteligente para WhatsApp que utiliza IA para responder automaticamente mensagens, integrado com Google Sheets para armazenamento de dados e Streamlit para dashboard de análise. Processa linguagem natural e aprende com as interações.",
     technologies: ["Python", "WhatsApp API", "Google Sheets API", "Streamlit", "NLP"],
     image: "./whatsapp-ai-chatbot-interface.jpg",
-    github: "#",
+    github: "https://github.com/Luizhcrs",
     demo: "#",
   },
   {
@@ -24,7 +24,7 @@ const projects = [
       "Plataforma web responsiva para restaurantes gerenciarem seus cardápios digitalmente. Integração com Google Sheets permite atualização em tempo real dos pratos, preços e disponibilidade sem necessidade de código.",
     technologies: ["React", "Next.js", "Google Sheets API", "Tailwind CSS", "TypeScript"],
     image: "./digital-menu-restaurant-interface.jpg",
-    github: "#",
+    github: "https://github.com/Luizhcrs",
     demo: "#",
   },
   {
@@ -34,7 +34,7 @@ const projects = [
       "Framework robusto de automação de testes end-to-end para aplicações web. Inclui relatórios detalhados, screenshots de falhas, execução paralela e integração com CI/CD. Reduz tempo de testes manuais em 80%.",
     technologies: ["Python", "Selenium", "Pytest", "GitHub Actions", "Allure Reports"],
     image: "./test-automation-selenium-dashboard.jpg",
-    github: "#",
+    github: "https://github.com/Luizhcrs",
     demo: "#",
   },
   {
@@ -44,7 +44,7 @@ const projects = [
       "Série de 10 projetos que demonstram evolução no aprendizado de C#, desde conceitos básicos até padrões avançados. Inclui POO, LINQ, async/await, Entity Framework, APIs REST e arquitetura limpa.",
     technologies: ["C#", ".NET Core", "Entity Framework", "ASP.NET", "SQL Server"],
     image: "./csharp-code-development-projects.jpg",
-    github: "#",
+    github: "https://github.com/Luizhcrs",
     demo: "#",
   },
   {
@@ -54,7 +54,7 @@ const projects = [
       "Análise e visualização de dados reais do CERN. Processamento de grandes volumes de dados de colisões de partículas, identificação de padrões e criação de visualizações interativas para facilitar descobertas científicas.",
     technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "Jupyter", "ROOT"],
     image: "./data-analysis-scientific-visualization.jpg",
-    github: "#",
+    github: "https://github.com/Luizhcrs",
     demo: "#",
   },
   {
@@ -64,7 +64,7 @@ const projects = [
       "API RESTful completa para e-commerce com autenticação JWT, gerenciamento de produtos, carrinho de compras, processamento de pagamentos e painel administrativo. Documentação completa com Swagger.",
     technologies: ["Node.js", "Express", "MongoDB", "JWT", "Stripe API", "Swagger"],
     image: "./api-ecommerce-backend-architecture.jpg",
-    github: "#",
+    github: "https://github.com/Luizhcrs",
     demo: "#",
   },
 ]

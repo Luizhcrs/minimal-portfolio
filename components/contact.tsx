@@ -5,22 +5,22 @@ const contacts = [
   {
     name: "GitHub",
     icon: Github,
-    href: "https://github.com",
+    href: "https://github.com/Luizhcrs",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/luizhcrs/",
   },
   {
     name: "Email",
     icon: Mail,
-    href: "mailto:seu@email.com",
+    href: "mailto:luizhcrs@gmail.com",
   },
   {
     name: "WhatsApp",
     icon: QrCode,
-    href: "#",
+    href: "https://wa.me/5581985729136",
   },
 ]
 
