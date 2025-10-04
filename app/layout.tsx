@@ -34,7 +34,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <CopyProtection />
         <ScrollHover />
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           <Suspense fallback={null}>
             {children}
             {/* <Analytics /> */}
