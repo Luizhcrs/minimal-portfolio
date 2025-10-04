@@ -26,10 +26,10 @@ const contacts = [
 
 export function Contact() {
   return (
-    <section className="py-32 px-6 bg-white dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto text-center space-y-16">
+    <section className="py-16 px-6 bg-white dark:bg-gray-900">
+      <div className="max-w-4xl mx-auto text-center space-y-8">
         <div className="space-y-4 animate-fade-in-up">
-          <h2 className="text-5xl md:text-6xl font-bold text-black dark:text-white">Contato</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white">Contato</h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg">Vamos conversar sobre seu próximo projeto</p>
         </div>
         <div className="flex flex-wrap justify-center gap-6">
@@ -57,7 +57,7 @@ export function Contact() {
           ))}
         </div>
         <div
-          className="pt-16 border-t border-gray-200 dark:border-gray-700 animate-fade-in-up"
+          className="pt-8 border-t border-gray-200 dark:border-gray-700 animate-fade-in-up"
           style={{ animationDelay: "400ms" }}
         >
           <p className="text-gray-500 dark:text-gray-400 text-sm">© 2025 Luiz Cavalcanti. Todos os direitos reservados.</p>
