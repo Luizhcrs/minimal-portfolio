@@ -71,7 +71,7 @@ export function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
 
         <div className="p-8 space-y-6" style={{ borderRadius: '0 0 0.5rem 0.5rem' }}>
           <div className="aspect-video overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700">
-            <img src={project.image || "./placeholder.svg"} alt={project.title} className="w-full h-full object-cover" />
+            <img src={project.image || "./placeholder.svg"} alt={project.title} className="w-full h-full object-cover scroll-hover-inactive" />
           </div>
 
           <div className="space-y-4">

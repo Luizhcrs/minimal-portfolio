@@ -5,6 +5,7 @@ import { Inter } from "next/font/google"
 import { Suspense } from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import { CopyProtection } from "@/components/copy-protection"
+import { ScrollHover } from "@/components/scroll-hover"
 import "./globals.css"
 
 const inter = Inter({
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
         <CopyProtection />
+        <ScrollHover />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Suspense fallback={null}>
             {children}

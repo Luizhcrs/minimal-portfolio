@@ -8,7 +8,7 @@ export function About() {
               <img
                 src="./professional-developer-portrait-minimalist.jpg"
                 alt="Profile"
-                className="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scroll-hover-inactive"
               />
             </div>
           </div>
