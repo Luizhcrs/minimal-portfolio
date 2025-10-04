@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { CopyProtection } from "@/components/copy-protection"
 import { ScrollHover } from "@/components/scroll-hover"
 import { DynamicFavicon } from "@/components/dynamic-favicon"
+import { ThemeColor } from "@/components/theme-color"
 import "./globals.css"
 
 const inter = Inter({
@@ -36,6 +37,7 @@ export default function RootLayout({
         <CopyProtection />
         <ScrollHover />
         <DynamicFavicon />
+        <ThemeColor />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           <Suspense fallback={null}>
             {children}
