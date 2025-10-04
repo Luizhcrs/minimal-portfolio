@@ -6,7 +6,7 @@ export function About() {
           <div className="flex-shrink-0 animate-slide-in-left">
             <div className="w-56 h-56 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center shadow-xl hover:shadow-2xl transition-shadow duration-500">
               <img
-                src="/professional-developer-portrait-minimalist.jpg"
+                src="./professional-developer-portrait-minimalist.jpg"
                 alt="Profile"
                 className="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />

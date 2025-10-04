@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description: "QA Engineer | Full Stack Dev | AI Enthusiast | Desenvolvedor multifacetado com experiência em testes de software, desenvolvimento full stack e análise de dados",
   generator: "v0.app",
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/apple-touch-icon.png',
+    icon: './favicon.svg',
+    shortcut: './favicon.svg',
+    apple: './apple-touch-icon.png',
   },
 }
 
