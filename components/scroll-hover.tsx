@@ -62,39 +62,10 @@ export function ScrollHover() {
         z-index: 1 !important;
       }
       
-      /* Indicador visual do "mouse virtual" */
-      .scroll-mouse-indicator {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 20px;
-        height: 20px;
-        border: 2px solid rgba(41, 0, 96, 0.3);
-        border-radius: 50%;
-        background: rgba(41, 0, 96, 0.1);
-        pointer-events: none;
-        z-index: 1000;
-        animation: pulse 2s infinite;
-      }
-      
-      @keyframes pulse {
-        0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-        50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.2); }
-      }
-      
-      @media (min-width: 769px) {
-        .scroll-mouse-indicator {
-          display: none;
-        }
-      }
     `
     document.head.appendChild(style)
 
-    // Criar indicador visual do "mouse virtual"
-    const indicator = document.createElement('div')
-    indicator.className = 'scroll-mouse-indicator'
-    document.body.appendChild(indicator)
+    // Indicador visual removido - apenas funcionalidade
 
     // Adicionar listener de scroll
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -106,7 +77,6 @@ export function ScrollHover() {
     return () => {
       window.removeEventListener('scroll', handleScroll)
       document.head.removeChild(style)
-      document.body.removeChild(indicator)
     }
   }, [])
 
