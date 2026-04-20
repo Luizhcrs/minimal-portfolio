@@ -1,4 +1,10 @@
 export function About() {
+  const skills = [
+    "FastAPI", "Python", "TypeScript", "React 19", "PostgreSQL", "Redis",
+    "Docker", "Traefik", "Coolify", "Stripe", "JWT/OIDC", "Reverse Engineering",
+    "Argon2id", "SQLAlchemy async", "Selenium", "Electron",
+  ]
+
   return (
     <section className="py-32 px-6 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-4xl mx-auto">
@@ -15,12 +21,17 @@ export function About() {
           <div className="flex-1 space-y-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
             <h2 className="text-5xl md:text-6xl font-bold text-black dark:text-white">Sobre Mim</h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-              Especialista em QA e desenvolvimento full stack. 
-              Experiência em Python, C#, JavaScript, Metabase e Docker. 
-              Criador de soluções como assistente de IA para WhatsApp e cardápio digital integrado ao Google Sheets.
+              Construo plataformas de serviços compartilhados, aplicações multi-tenant e
+              sistemas de automação — do schema SQL até o deploy em produção. Foco em
+              qualidade, observabilidade e segurança desde o primeiro commit.
+            </p>
+            <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+              Atualmente tocando a <strong>Connect Softhouse</strong>, uma plataforma
+              modular (Auth, Payments, WhatsApp) consumida por aplicações clientes.
+              Review multi-agente antes de cada deploy crítico, documentação como contrato.
             </p>
             <div className="flex flex-wrap gap-3 pt-4">
-              {["QA Testing", "Full Stack", "AI/ML", "Automation", "Python", "C#", "PostgreSQL", "Docker", "Metabase", "n8n"].map((skill, index) => (
+              {skills.map((skill, index) => (
                 <span
                   key={skill}
                   className="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-full text-sm text-gray-700 dark:text-gray-300 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black hover:border-black dark:hover:border-white transition-all duration-300 cursor-default"

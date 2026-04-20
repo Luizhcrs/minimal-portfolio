@@ -8,143 +8,153 @@ import { ProjectModal } from "./project-modal"
 
 const projects = [
   {
-    title: "Agente IA no WhatsApp",
-    description: "Integração inteligente com Google Sheets e Streamlit",
+    title: "Connect Auth",
+    description: "Serviço OIDC multi-tenant com OTP + JWT RS256",
     fullDescription:
-      "Bot inteligente para WhatsApp que utiliza IA para responder automaticamente mensagens, integrado com Google Sheets para armazenamento de dados e Streamlit para dashboard de análise. Processa linguagem natural e aprende com as interações.",
-    technologies: ["Python", "WhatsApp API", "Google Sheets API", "Streamlit", "NLP"],
-    image: "./whatsapp-ai-chatbot-interface.jpg",
-    github: "https://github.com/Luizhcrs",
+      "Single source of truth de autenticação pra toda a plataforma Connect Softhouse. Multi-tenant, OTP via WhatsApp/Email, RBAC completo, JWT RS256 com JWKS público pra validação descentralizada, rotação de refresh token com detecção de replay. Argon2id, rate limit sliding window, audit log estruturado, admin UI completa. Deployed via Coolify + Traefik.",
+    technologies: ["FastAPI", "SQLAlchemy async", "PostgreSQL", "Redis", "React 19", "Argon2id", "JWT RS256"],
+    image: "./connect-auth.jpg",
+    github: "https://github.com/Luizhcrs/connect-auth",
+    demo: "https://auth.connectsofthouse.com.br",
+  },
+  {
+    title: "Connect Payment",
+    description: "Gateway federado Stripe + Pix (Mercado Pago)",
+    fullDescription:
+      "Serviço de pagamento multi-account federado: cada tenant tem suas próprias credenciais Stripe/MP criptografadas at-rest com Fernet. Webhooks idempotentes com HMAC + pg_advisory_xact_lock, refund via gateway correto, dashboard com métricas 7 dias, admin UI pra configurar credenciais sem tocar em curl. Integra JWT do Connect Auth via JWKS.",
+    technologies: ["FastAPI", "Stripe API", "Mercado Pago", "Fernet AES", "PostgreSQL", "Webhooks HMAC", "React 19"],
+    image: "./connect-payment.jpg",
+    github: "https://github.com/Luizhcrs/connect-payment",
+    demo: "https://payment.connectsofthouse.com.br",
+  },
+  {
+    title: "BM Seletor",
+    description: "Modding de PES 2021 via reverse engineering",
+    fullDescription:
+      "Ferramenta desktop (Electron + TypeScript) pra modificar save files e CPK do eFootball PES 2021. Inclui decifrador MT19937 XOR próprio, parser de estruturas binárias custom, injeção de patches no executável e re-criptografia. Trabalho de RE profundo — mapeamento manual de offsets via diff byte-a-byte de saves, documentado em Obsidian.",
+    technologies: ["Electron", "TypeScript", "C#", "CriPakTools", "MT19937", "Reverse Engineering"],
+    image: "./bmseletor.jpg",
+    github: "https://github.com/Luizhcrs/bmliga",
     demo: "#",
   },
   {
-    title: "Cardápio Digital",
-    description: "Sistema de menu dinâmico com Google Sheets",
+    title: "Evolution Shared",
+    description: "WhatsApp API multi-tenant como serviço compartilhado",
     fullDescription:
-      "Plataforma web responsiva para restaurantes gerenciarem seus cardápios digitalmente. Integração com Google Sheets permite atualização em tempo real dos pratos, preços e disponibilidade sem necessidade de código.",
-    technologies: ["React", "Next.js", "Google Sheets API", "Tailwind CSS", "TypeScript"],
-    image: "./digital-menu-restaurant-interface.jpg",
-    github: "https://github.com/Luizhcrs",
+      "Instância Evolution API compartilhada entre todos os produtos da plataforma. Traefik com basic auth bcrypt cost 12 em endpoints administrativos, Redis autenticado, Postgres dedicado, docker-socket-proxy planejado. Serve o envio de OTP do Connect Auth e chatbots dos produtos Connect.",
+    technologies: ["Evolution API", "PostgreSQL", "Redis", "Traefik", "Docker Compose", "Coolify"],
+    image: "./evolution-shared.jpg",
+    github: "https://github.com/Luizhcrs/evolution-shared",
     demo: "#",
   },
   {
-    title: "Automação de Testes",
-    description: "Framework completo com Selenium e Pytest",
+    title: "Carteira IA",
+    description: "Gestão financeira pessoal com IA + Stripe",
     fullDescription:
-      "Framework robusto de automação de testes end-to-end para aplicações web. Inclui relatórios detalhados, screenshots de falhas, execução paralela e integração com CI/CD. Reduz tempo de testes manuais em 80%.",
-    technologies: ["Python", "Selenium", "Pytest", "GitHub Actions", "Allure Reports"],
-    image: "./test-automation-selenium-dashboard.jpg",
-    github: "https://github.com/Luizhcrs",
+      "SaaS de gestão financeira com integração Stripe pra billing. Dashboard analítico, categorização automática de transações por IA, multi-provedor de billing. Em produção em carteira-ia.com.",
+    technologies: ["FastAPI", "React", "Stripe", "PostgreSQL", "LLM"],
+    image: "./carteira-ia.jpg",
+    github: "https://github.com/Luizhcrs/carteira-ia",
     demo: "#",
   },
   {
-    title: "C# Evolution",
-    description: "10 projetos progressivos de estudo em C#",
+    title: "GoMov",
+    description: "SaaS multi-tenant pra locadoras de moto",
     fullDescription:
-      "Série de 10 projetos que demonstram evolução no aprendizado de C#, desde conceitos básicos até padrões avançados. Inclui POO, LINQ, async/await, Entity Framework, APIs REST e arquitetura limpa.",
-    technologies: ["C#", ".NET Core", "Entity Framework", "ASP.NET", "SQL Server"],
-    image: "./csharp-code-development-projects.jpg",
-    github: "https://github.com/Luizhcrs",
-    demo: "#",
-  },
-  {
-    title: "LHC Data Analysis",
-    description: "Análise de dados científicos do Large Hadron Collider",
-    fullDescription:
-      "Análise e visualização de dados reais do CERN. Processamento de grandes volumes de dados de colisões de partículas, identificação de padrões e criação de visualizações interativas para facilitar descobertas científicas.",
-    technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "Jupyter", "ROOT"],
-    image: "./data-analysis-scientific-visualization.jpg",
-    github: "https://github.com/Luizhcrs",
-    demo: "#",
-  },
-  {
-    title: "API RESTful E-commerce",
-    description: "Backend completo para plataforma de vendas online",
-    fullDescription:
-      "API RESTful completa para e-commerce com autenticação JWT, gerenciamento de produtos, carrinho de compras, processamento de pagamentos e painel administrativo. Documentação completa com Swagger.",
-    technologies: ["Node.js", "Express", "MongoDB", "JWT", "Stripe API", "Swagger"],
-    image: "./api-ecommerce-backend-architecture.jpg",
-    github: "https://github.com/Luizhcrs",
+      "Plataforma completa pra gestão de locadoras de moto: contratos, pagamentos recorrentes via Stripe, dashboards operacionais, integração com WhatsApp via Evolution shared. Arquitetura MCP, em migração Rust→Python. Multi-tenant com isolamento por dados.",
+    technologies: ["FastAPI", "PostgreSQL", "Stripe Subscriptions", "React", "MCP", "Multi-tenant"],
+    image: "./gomov.jpg",
+    github: "https://github.com/Luizhcrs/GoMov",
     demo: "#",
   },
 ]
 
 export function Projects() {
-  const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const handleCardClick = (project: (typeof projects)[0]) => {
-    setSelectedProject(project)
-    setIsModalOpen(true)
-  }
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setTimeout(() => setSelectedProject(null), 300)
-  }
+  const [selected, setSelected] = useState<(typeof projects)[0] | null>(null)
 
   return (
-    <>
-      <section id="projects" className="py-32 px-6 bg-white dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-20 text-center space-y-4 animate-fade-in-up">
-            <h2 className="text-5xl md:text-6xl font-bold text-black dark:text-white">Projetos</h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg">Alguns dos meus trabalhos recentes</p>
-          </div>
+    <section id="projects" className="py-24 px-6 bg-white dark:bg-gray-950 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-black dark:text-white">
+          Projetos
+        </h2>
+        <p className="text-center text-gray-600 dark:text-gray-400 mb-16 text-lg">
+          Plataforma Connect Softhouse e projetos em produção
+        </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card
-                key={index}
-                onClick={() => handleCardClick(project)}
-                className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white hover:shadow-2xl transition-all duration-500 overflow-hidden animate-scale-in cursor-pointer"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700">
-                  <img
-                    src={project.image || "./placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500 scroll-hover-inactive"
-                  />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <Card
+              key={index}
+              onClick={() => setSelected(project)}
+              className="group cursor-pointer overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-900"
+            >
+              <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center overflow-hidden">
+                <span className="text-5xl font-bold text-gray-300 dark:text-gray-700 tracking-tight">
+                  {project.title.split(" ").map(w => w[0]).join("").slice(0, 3)}
+                </span>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.slice(0, 3).map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {project.technologies.length > 3 && (
+                    <span className="text-xs px-2 py-1 text-gray-500 dark:text-gray-500">
+                      +{project.technologies.length - 3}
+                    </span>
+                  )}
                 </div>
-                <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{project.description}</p>
-                  <div className="flex gap-3 pt-2">
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    asChild
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="w-3.5 h-3.5 mr-1.5" />
+                      Código
+                    </a>
+                  </Button>
+                  {project.demo !== "#" && (
                     <Button
                       variant="outline"
                       size="sm"
-                      className="flex-1 border-gray-300 dark:border-gray-600 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black hover:border-black dark:hover:border-white transition-all duration-300 bg-transparent dark:text-gray-300"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        window.open(project.github, "_blank")
-                      }}
+                      asChild
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      <Github className="w-4 h-4 mr-2" />
-                      GitHub
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-3.5 h-3.5 mr-1.5" />
+                        Live
+                      </a>
                     </Button>
-                    <Button
-                      size="sm"
-                      className="flex-1 bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        window.open(project.demo, "_blank")
-                      }}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Demo
-                    </Button>
-                  </div>
+                  )}
                 </div>
-              </Card>
-            ))}
-          </div>
+              </div>
+            </Card>
+          ))}
         </div>
-      </section>
+      </div>
 
-      <ProjectModal isOpen={isModalOpen} onClose={handleCloseModal} project={selectedProject} />
-    </>
+      {selected && (
+        <ProjectModal
+          project={selected}
+          isOpen={!!selected}
+          onClose={() => setSelected(null)}
+        />
+      )}
+    </section>
   )
 }
