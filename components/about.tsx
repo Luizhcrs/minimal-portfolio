@@ -1,8 +1,8 @@
 export function About() {
   const skills = [
-    "FastAPI", "Python", "TypeScript", "React 19", "PostgreSQL", "Redis",
-    "Docker", "Traefik", "Coolify", "Stripe", "JWT/OIDC", "Reverse Engineering",
-    "Argon2id", "SQLAlchemy async", "Selenium", "Electron",
+    "Python", "TypeScript", "FastAPI", "React", "PostgreSQL", "Redis",
+    "Docker", "Linux", "Selenium", "Pytest", "Next.js", "Tailwind",
+    "C#", ".NET", "LLM", "Reverse Engineering",
   ]
 
   return (
@@ -19,16 +19,15 @@ export function About() {
             </div>
           </div>
           <div className="flex-1 space-y-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-            <h2 className="text-5xl md:text-6xl font-bold text-black dark:text-white">Sobre Mim</h2>
+            <h2 className="text-5xl md:text-6xl font-bold text-black dark:text-white">Sobre</h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-              Construo plataformas de serviços compartilhados, aplicações multi-tenant e
-              sistemas de automação — do schema SQL até o deploy em produção. Foco em
-              qualidade, observabilidade e segurança desde o primeiro commit.
+              Engenharia de software full-cycle com atenção à qualidade e automação.
+              Do schema SQL ao deploy, passando por testes, observabilidade e UX administrativa.
             </p>
             <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-              Atualmente tocando a <strong>Connect Softhouse</strong>, uma plataforma
-              modular (Auth, Payments, WhatsApp) consumida por aplicações clientes.
-              Review multi-agente antes de cada deploy crítico, documentação como contrato.
+              Áreas que me interessam: arquiteturas multi-tenant, identidade e autenticação,
+              integrações de pagamento, sistemas com LLMs, reverse engineering e
+              automação de tarefas repetitivas.
             </p>
             <div className="flex flex-wrap gap-3 pt-4">
               {skills.map((skill, index) => (

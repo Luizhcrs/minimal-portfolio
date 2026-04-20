@@ -8,63 +8,63 @@ import { ProjectModal } from "./project-modal"
 
 const projects = [
   {
-    title: "Connect Auth",
-    description: "Serviço OIDC multi-tenant com OTP + JWT RS256",
+    title: "Orb",
+    description: "Assistente AI flutuante pra desktop",
     fullDescription:
-      "Single source of truth de autenticação pra toda a plataforma Connect Softhouse. Multi-tenant, OTP via WhatsApp/Email, RBAC completo, JWT RS256 com JWKS público pra validação descentralizada, rotação de refresh token com detecção de replay. Argon2id, rate limit sliding window, audit log estruturado, admin UI completa. Deployed via Coolify + Traefik.",
-    technologies: ["FastAPI", "SQLAlchemy async", "PostgreSQL", "Redis", "React 19", "Argon2id", "JWT RS256"],
-    image: "./connect-auth.jpg",
-    github: "https://github.com/Luizhcrs/connect-auth",
-    demo: "https://auth.connectsofthouse.com.br",
-  },
-  {
-    title: "Connect Payment",
-    description: "Gateway federado Stripe + Pix (Mercado Pago)",
-    fullDescription:
-      "Serviço de pagamento multi-account federado: cada tenant tem suas próprias credenciais Stripe/MP criptografadas at-rest com Fernet. Webhooks idempotentes com HMAC + pg_advisory_xact_lock, refund via gateway correto, dashboard com métricas 7 dias, admin UI pra configurar credenciais sem tocar em curl. Integra JWT do Connect Auth via JWKS.",
-    technologies: ["FastAPI", "Stripe API", "Mercado Pago", "Fernet AES", "PostgreSQL", "Webhooks HMAC", "React 19"],
-    image: "./connect-payment.jpg",
-    github: "https://github.com/Luizhcrs/connect-payment",
-    demo: "https://payment.connectsofthouse.com.br",
-  },
-  {
-    title: "BM Seletor",
-    description: "Modding de PES 2021 via reverse engineering",
-    fullDescription:
-      "Ferramenta desktop (Electron + TypeScript) pra modificar save files e CPK do eFootball PES 2021. Inclui decifrador MT19937 XOR próprio, parser de estruturas binárias custom, injeção de patches no executável e re-criptografia. Trabalho de RE profundo — mapeamento manual de offsets via diff byte-a-byte de saves, documentado em Obsidian.",
-    technologies: ["Electron", "TypeScript", "C#", "CriPakTools", "MT19937", "Reverse Engineering"],
-    image: "./bmseletor.jpg",
-    github: "https://github.com/Luizhcrs/bmliga",
+      "Aplicação desktop que mantém um assistente AI sempre acessível, flutuante na tela. Integra modelos locais e remotos, com foco em produtividade e interação natural. Escrita em C# .NET.",
+    technologies: ["C#", ".NET", "Desktop", "AI/LLM"],
+    image: "./orb-preview.jpg",
+    github: "https://github.com/Luizhcrs/orb",
     demo: "#",
   },
   {
-    title: "Evolution Shared",
-    description: "WhatsApp API multi-tenant como serviço compartilhado",
+    title: "FlowAgentic",
+    description: "Framework de agentes autônomos em TypeScript",
     fullDescription:
-      "Instância Evolution API compartilhada entre todos os produtos da plataforma. Traefik com basic auth bcrypt cost 12 em endpoints administrativos, Redis autenticado, Postgres dedicado, docker-socket-proxy planejado. Serve o envio de OTP do Connect Auth e chatbots dos produtos Connect.",
-    technologies: ["Evolution API", "PostgreSQL", "Redis", "Traefik", "Docker Compose", "Coolify"],
-    image: "./evolution-shared.jpg",
-    github: "https://github.com/Luizhcrs/evolution-shared",
+      "Infraestrutura pra composição de agentes AI com fluxos determinísticos e estado persistente. Construído em TypeScript moderno.",
+    technologies: ["TypeScript", "Node.js", "Agentes AI", "LLM"],
+    image: "./flowagentic.jpg",
+    github: "https://github.com/Luizhcrs/FlowAgentic",
     demo: "#",
   },
   {
-    title: "Carteira IA",
-    description: "Gestão financeira pessoal com IA + Stripe",
+    title: "LuminAI",
+    description: "Aplicação AI mobile em Kotlin",
     fullDescription:
-      "SaaS de gestão financeira com integração Stripe pra billing. Dashboard analítico, categorização automática de transações por IA, multi-provedor de billing. Em produção em carteira-ia.com.",
-    technologies: ["FastAPI", "React", "Stripe", "PostgreSQL", "LLM"],
-    image: "./carteira-ia.jpg",
-    github: "https://github.com/Luizhcrs/carteira-ia",
+      "Aplicativo Android focado em assistência via LLM com interface nativa. Kotlin + componentes modernos do ecossistema Android.",
+    technologies: ["Kotlin", "Android", "LLM", "Mobile"],
+    image: "./luminai.jpg",
+    github: "https://github.com/Luizhcrs/LuminAI",
     demo: "#",
   },
   {
-    title: "GoMov",
-    description: "SaaS multi-tenant pra locadoras de moto",
+    title: "Automação de Testes",
+    description: "Framework completo com Selenium + Pytest",
     fullDescription:
-      "Plataforma completa pra gestão de locadoras de moto: contratos, pagamentos recorrentes via Stripe, dashboards operacionais, integração com WhatsApp via Evolution shared. Arquitetura MCP, em migração Rust→Python. Multi-tenant com isolamento por dados.",
-    technologies: ["FastAPI", "PostgreSQL", "Stripe Subscriptions", "React", "MCP", "Multi-tenant"],
-    image: "./gomov.jpg",
-    github: "https://github.com/Luizhcrs/GoMov",
+      "Framework robusto de automação end-to-end: relatórios detalhados, screenshots de falhas, execução paralela e integração com CI/CD. Reduz drasticamente o tempo de testes manuais em aplicações web.",
+    technologies: ["Python", "Selenium", "Pytest", "CI/CD", "Allure"],
+    image: "./test-automation.jpg",
+    github: "https://github.com/Luizhcrs",
+    demo: "#",
+  },
+  {
+    title: "Reverse Engineering",
+    description: "Análise binária e patching de formatos custom",
+    fullDescription:
+      "Trabalhos de engenharia reversa em formatos proprietários: decifrar streams XOR MT19937, mapear estruturas binárias byte a byte via diff de arquivos, gerar patches cirúrgicos em executáveis. Ferramental em TypeScript/Python.",
+    technologies: ["TypeScript", "Binary Analysis", "MT19937", "Patching"],
+    image: "./re-work.jpg",
+    github: "https://github.com/Luizhcrs",
+    demo: "#",
+  },
+  {
+    title: "Análise de Dados",
+    description: "Pipelines de dados e visualização interativa",
+    fullDescription:
+      "Processamento de datasets grandes, identificação de padrões e dashboards. Stack Python com Pandas e visualizações em Metabase/Matplotlib.",
+    technologies: ["Python", "Pandas", "SQL", "Metabase"],
+    image: "./data-analysis.jpg",
+    github: "https://github.com/Luizhcrs",
     demo: "#",
   },
 ]
@@ -79,7 +79,7 @@ export function Projects() {
           Projetos
         </h2>
         <p className="text-center text-gray-600 dark:text-gray-400 mb-16 text-lg">
-          Plataforma Connect Softhouse e projetos em produção
+          Uma seleção dos trabalhos públicos
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
