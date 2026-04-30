@@ -66,17 +66,6 @@ const projects: Project[] = [  {
     github: "https://github.com/Luizhcrs/orb",
     icon: "orb",
   },
-  {
-    title: "FlowAgentic",
-    kind: "public",
-    category: "Agentes AI · TypeScript",
-    description: "Framework de composição de agentes autônomos em TypeScript",
-    fullDescription:
-      "Infraestrutura pra composição de agentes AI com fluxos determinísticos e estado persistente. Construído em TypeScript moderno.",
-    technologies: ["TypeScript", "Node.js", "Agentes AI", "LLM"],
-    github: "https://github.com/Luizhcrs/FlowAgentic",
-    icon: "agent",
-  },
 ]
 
 const ICON_MAP: Record<string, JSX.Element> = {
