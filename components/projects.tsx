@@ -68,6 +68,42 @@ const projects: Project[] = [
     icon: "saas",
   },
   {
+    title: "Glico",
+    kind: "public",
+    category: "Mobile · Saúde · Sage Calm",
+    description: "App Android offline-first pra registro de glicemia em diabetes tipo 1",
+    fullDescription:
+      "Aplicativo single-user pra registro de glicemia capilar, doses de insulina e episódios de hipoglicemia em T1 diabetes. Offline por construção: dados locais via SQLite, zero backend, zero analytics, zero tracking. Lembretes inteligentes que silenciam quando já houve medição na janela. Backup AES-256-GCM com PBKDF2-SHA256. Identidade visual própria (Sage Calm: verde sálvia + Plus Jakarta Sans + Lucide). Distribuição via APK no GitHub Releases + landing page no GitHub Pages. Cobertura de testes domain layer 99%.",
+    technologies: ["React Native", "Expo SDK 54", "TypeScript", "expo-sqlite", "victory-native", "AES-256-GCM", "PBKDF2", "Plus Jakarta Sans", "Lucide"],
+    highlights: [
+      "Lembretes silenciam automaticamente quando já houve medição na janela ±tolerância",
+      "Identidade visual própria: ícone, splash e adaptive Android gerados a partir de SVGs versionados",
+      "63 testes (98.7% statements, 100% functions/lines em domain)",
+      "PDF report Sage Calm com episódios de hipo + buckets manhã/tarde/noite",
+    ],
+    github: "https://github.com/Luizhcrs/glico-app",
+    demo: "https://luizhcrs.github.io/glico-app/",
+    icon: "health",
+  },
+  {
+    title: "tfs-test-runner",
+    kind: "public",
+    category: "QA · Test Automation · Offline",
+    description: "Converte exports xlsx do Azure DevOps em kit HTML de execução de testes offline",
+    fullDescription:
+      "Ferramenta de QA que transforma exports xlsx do Azure DevOps / TFS em um kit HTML self-contained pra execução de casos de teste, captura de screenshots, tracking de status e geração de PDF de evidência. Funciona 100% offline, sem servidor. Tradução opcional via OpenAI. Bilíngue PT-BR/EN, com docs no GitHub Pages e CI verde. Substitui ferramentas pagas pra times que precisam rodar planos de teste sem infraestrutura adicional.",
+    technologies: ["Python", "Jinja2", "HTML/CSS", "PDF generation", "OpenAI API", "GitHub Actions"],
+    highlights: [
+      "Self-contained HTML — abre em qualquer navegador, sem dependências",
+      "Captura de evidência embarcada (screenshots + PDF)",
+      "Bilíngue PT-BR / EN com docs estruturadas",
+      "CI com gates + GitHub Pages pra documentação",
+    ],
+    github: "https://github.com/Luizhcrs/tfs-test-runner",
+    demo: "https://luizhcrs.github.io/tfs-test-runner/",
+    icon: "qa",
+  },
+  {
     title: "Orb",
     kind: "public",
     category: "Desktop · AI",
@@ -107,6 +143,18 @@ const projects: Project[] = [
 ]
 
 const ICON_MAP: Record<string, JSX.Element> = {
+  health: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M3 12h4l3-9 4 18 3-9h4" />
+    </svg>
+  ),
+  qa: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="4" y="3" width="16" height="18" rx="2" />
+      <polyline points="9 11 11 13 15 9" />
+      <line x1="8" y1="17" x2="16" y2="17" />
+    </svg>
+  ),
   auth: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
       <rect x="3" y="11" width="18" height="11" rx="2" />
