@@ -19,55 +19,7 @@ type Project = {
   icon: string
 }
 
-const projects: Project[] = [
-  {
-    title: "Plataforma de identidade multi-tenant",
-    kind: "case-study",
-    category: "Auth · OIDC · Multi-tenant",
-    description: "Serviço central de autenticação com RBAC completo, OTP multicanal e JWT RS256",
-    fullDescription:
-      "Serviço OIDC-compliant construído pra ser o single source of truth de autenticação de uma plataforma multi-produto. Multi-tenant isolado por design, RBAC com roles + permissions hierárquicas, OTP via WhatsApp e email com rate limiting por Redis. JWT RS256 com JWKS público permite aos produtos consumidores validarem tokens sem round-trip. Refresh tokens opacos com hash-only no DB e rotação com detecção de replay — reuso de token já consumido dispara revogação da cadeia inteira. Admin UI completa com dashboard, audit log estruturado e gestão de API keys.",
-    technologies: ["FastAPI", "SQLAlchemy async", "PostgreSQL", "Redis", "Argon2id", "JWT RS256", "React 19", "Docker"],
-    highlights: [
-      "OIDC discovery + JWKS público pra integração descentralizada",
-      "Refresh token rotation com replay detection revogando cadeia inteira",
-      "Rate limit sliding window + bootstrap idempotente de admin",
-      "Audit trail completo com eventos namespaced (auth.otp.sent, auth.login.failed)",
-    ],
-    icon: "auth",
-  },
-  {
-    title: "Gateway federado de pagamentos",
-    kind: "case-study",
-    category: "Pagamentos · Stripe · Pix",
-    description: "Multi-account federado com credenciais por tenant encriptadas at-rest (Fernet AES)",
-    fullDescription:
-      "Serviço de cobrança que suporta Stripe (cartão) e Mercado Pago (Pix) operando em modelo federado: cada tenant configura suas próprias credenciais de gateway, encriptadas at-rest com chave-mestre Fernet. Webhooks path-per-tenant com validação HMAC + pg_advisory_xact_lock pra serializar retentativas do gateway e impedir contabilização duplicada. Refund via SDK do provedor correto, audit log pra toda mutação de config. Admin UI com dashboard de volume 24h/7d, listagem de pagamentos com filtros, viewer de webhooks pra debug.",
-    technologies: ["FastAPI", "Stripe SDK", "Mercado Pago", "Fernet AES-128", "PostgreSQL", "Webhooks HMAC", "React 19"],
-    highlights: [
-      "Credenciais de gateway encriptadas por tenant (zero compartilhamento)",
-      "Webhook idempotente com advisory lock (sem double-charging em retry)",
-      "Rate limit EXPIRE NX correto (sliding window real)",
-      "Security review multi-agente antes do deploy em prod",
-    ],
-    icon: "payment",
-  },
-  {
-    title: "SaaS de gestão operacional multi-tenant",
-    kind: "case-study",
-    category: "SaaS · Multi-tenant · B2B",
-    description: "Plataforma B2B com contratos, pagamentos recorrentes e integrações em tempo real",
-    fullDescription:
-      "SaaS multi-tenant construído pra gestão operacional completa: contratos, pagamentos recorrentes via assinaturas Stripe, dashboards, comunicação via WhatsApp e email, isolamento de dados por tenant. Arquitetura baseada em MCP (Model Context Protocol) pra integração com agentes. Stack FastAPI + React, banco único com row-level filtering, observabilidade estruturada.",
-    technologies: ["FastAPI", "PostgreSQL", "Stripe Subscriptions", "React", "MCP", "Docker", "Traefik"],
-    highlights: [
-      "Isolamento multi-tenant via tenant_id FK em todo modelo",
-      "Assinaturas recorrentes com lifecycle completo (trial → active → past_due)",
-      "Integrações síncronas e assíncronas (WhatsApp, email, webhooks externos)",
-    ],
-    icon: "saas",
-  },
-  {
+const projects: Project[] = [  {
     title: "Glico",
     kind: "public",
     category: "Mobile · Saúde · Sage Calm",
@@ -124,21 +76,6 @@ const projects: Project[] = [
     technologies: ["TypeScript", "Node.js", "Agentes AI", "LLM"],
     github: "https://github.com/Luizhcrs/FlowAgentic",
     icon: "agent",
-  },
-  {
-    title: "Reverse Engineering de formato proprietário",
-    kind: "case-study",
-    category: "RE · Binary Analysis",
-    description: "Decifragem e patching de arquivos de save de um jogo comercial",
-    fullDescription:
-      "Trabalho de engenharia reversa em formato proprietário de arquivos de save de um jogo de console/PC. Implementação do algoritmo de cifragem (MT19937 XOR stream) em TypeScript a partir de análise estática, mapeamento byte-a-byte de estruturas binárias via diff de saves, injeção de patches cirúrgicos em executáveis + recifragem. Ferramental em Electron pra expor o trabalho via UI.",
-    technologies: ["Electron", "TypeScript", "C#", "Binary Analysis", "MT19937", "Reverse Engineering"],
-    highlights: [
-      "Reimplementação de stream cipher via RE estática",
-      "Mapeamento manual de ~50 campos de save via diff byte-a-byte",
-      "UI desktop com hot-reload dos patches",
-    ],
-    icon: "re",
   },
 ]
 
@@ -213,8 +150,7 @@ export function Projects() {
             Trabalhos &amp; Projetos
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            Seleção de case studies de trabalhos em produção e projetos públicos. Case
-            studies descrevem o trabalho técnico sem identificar clientes.
+            Seleção de projetos públicos com código aberto.
           </p>
         </div>
 
